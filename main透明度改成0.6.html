@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算叶子节点</title>
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>计算叶子节点</h1>
+        <div id="degrees-container">
+            <div class="input-container" id="degree-input-1">
+                <label for="degree1">度为1的节点数量:</label>
+                <input type="number" id="degree1" value="0">
+            </div>
+        </div>
+        <button id="add-degree">添加度数</button>
+        <button onclick="calculateLeafNodes()">计算</button>
+        <p>叶子节点数量: <span id="result">0</span></p >
+    </div>
+    <script src="script.js"></script>
+
+
+<div class="footer">
+        @21计科刘少龙——其实我的梦想是世界和平
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+<style>
+body {
+    font-family: 'Patrick Hand SC', cursive; 
+    background-image: url('beijing.jpg'); /* 您的初音未来背景图的路径 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #444;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.6); /* 稍微透明的背景，使初音未来的壁纸能够稍微显现出来 */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 380px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #00a2e8; /* 青蓝色标题 */
+}
+
+.input-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-container input {
+    width: 93%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #00a2e8; /* 青蓝色边框 */
+    border-radius: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00a2e8; /* 青蓝色按钮 */
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0082b8;
+}
+
+button#add-degree {
+    margin-bottom: 15px;
+}
+
+
+.footer {
+    position: fixed; 
+    bottom: 10px; 
+    width: 100%; 
+    text-align: center; 
+    font-size: 14px; 
+    color: #888888;
+}
+
+
+h1::before {
+    content: "♪ ";
+}
+
+h1::after {
+    content: " ♪";
+}
+
+button::before {
+    content: "❤ ";
+}
+
+button::after {
+    content: " ❤";
+}
+
+</style>
+
+
+
+
+
+<script>
+
+let degreeCount = 1;
+
+function addDegree() {
+    degreeCount++;
+    const container = document.getElementById('degrees-container');
+    const inputDiv = document.createElement('div');
+    inputDiv.classList.add('input-container');
+    inputDiv.setAttribute('id', `degree-input-${degreeCount}`);
+    
+    const label = document.createElement('label');
+    label.setAttribute('for', `degree${degreeCount}`);
+    label.innerText = `度为${degreeCount}的节点数量:`;
+
+    const input = document.createElement('input');
+    input.setAttribute('type', 'number');
+    input.setAttribute('id', `degree${degreeCount}`);
+    input.value = 0;
+
+    inputDiv.appendChild(label);
+    inputDiv.appendChild(input);
+    container.appendChild(inputDiv);
+}
+
+function calculateLeafNodes() {
+    let totalNodes = 0;
+    let nonLeafNodes = 0;
+    
+    for (let i = 2; i <= degreeCount; i++) {
+        const nodeValue = parseInt(document.getElementById(`degree${i}`).value);
+        totalNodes += nodeValue;
+        nonLeafNodes += nodeValue;
+    }
+
+    const leafNodes = totalNodes - nonLeafNodes + parseInt(document.getElementById('degree1').value);
+    document.getElementById('result').innerText = leafNodes;
+}
+
+document.getElementById('add-degree').addEventListener('click', addDegree);
+
+
+</script>
