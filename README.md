@@ -14,7 +14,7 @@
 
 ## 🔗 链接
 
-[点击这里查看项目](树的叶子节点计算器.html) <!-- 请替换为您的GitHub仓库链接 -->
+[点击这里查看项目](https://github.com/SLDragon-cx330/LeafNodeCalculator/%E6%A0%91%E7%9A%84%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E8%AE%A1%E7%AE%97%E5%99%A8.html) <!-- 请替换为您的GitHub仓库链接 -->
 
 ## 📝 说明
 
