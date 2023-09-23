@@ -10,7 +10,7 @@
 
 ## 🎨 展示
 
-<img src="beijing.png" alt="Cover Image" width="50%">
+<img src="beijing.jpg" alt="Cover Image" width="50%">
 
 ## 🔗 链接
 
