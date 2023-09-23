@@ -10,11 +10,11 @@
 
 ## 🎨 展示
 
-<img src="beijing.jpg" alt="Cover Image" width="50%">
+<img src="beijing.jpg" alt="Cover Image" width="30%">
 
 ## 🔗 链接
 
-[点击这里查看项目](https://github.com/SLDragon-cx330/LeafNodeCalculator/树的叶子节点计算器.html) <!-- 请替换为您的GitHub仓库链接 -->
+[点击这里查看项目](树的叶子节点计算器.html) <!-- 请替换为您的GitHub仓库链接 -->
 
 ## 📝 说明
 
